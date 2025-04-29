@@ -2,30 +2,34 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>http://192.168.1.100:8000/</loc>
-         <lastmod>2025-04-25</lastmod>
+         <lastmod>2025-04-29</lastmod>
     </url>
     <url>
          <loc>http://192.168.1.100:8000/changelog/</loc>
-         <lastmod>2025-04-25</lastmod>
+         <lastmod>2025-04-29</lastmod>
     </url>
     <url>
          <loc>http://192.168.1.100:8000/code_of_conduct/</loc>
-         <lastmod>2025-04-25</lastmod>
+         <lastmod>2025-04-29</lastmod>
     </url>
     <url>
          <loc>http://192.168.1.100:8000/contributing/</loc>
-         <lastmod>2025-04-25</lastmod>
+         <lastmod>2025-04-29</lastmod>
     </url>
     <url>
          <loc>http://192.168.1.100:8000/development/</loc>
-         <lastmod>2025-04-25</lastmod>
+         <lastmod>2025-04-29</lastmod>
+    </url>
+    <url>
+         <loc>http://192.168.1.100:8000/development_fresher_guide/</loc>
+         <lastmod>2025-04-29</lastmod>
     </url>
     <url>
          <loc>http://192.168.1.100:8000/installation/</loc>
-         <lastmod>2025-04-25</lastmod>
+         <lastmod>2025-04-29</lastmod>
     </url>
     <url>
          <loc>http://192.168.1.100:8000/sequelize_cc_typescript/</loc>
-         <lastmod>2025-04-25</lastmod>
+         <lastmod>2025-04-29</lastmod>
     </url>
 </urlset>

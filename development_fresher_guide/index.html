@@ -1,0 +1,1597 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Documentation for the PI-NODE-CLI, a powerful command-line interface tool designed for Node.js development. This CLI simplifies common development tasks, provides scaffolding for new projects, and includes utilities for database management, API testing, and application deployment. Includes detailed guides, API references, and best practices for using the tool effectively.
+">
+      
+      
+        <meta name="author" content="Supratim Neogi">
+      
+      
+        <link rel="canonical" href="http://192.168.1.100:8000/development_fresher_guide/">
+      
+      
+        <link rel="prev" href="../sequelize_cc_typescript/">
+      
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.12">
+    
+    
+      
+        <title>Development Fresher Guide - PI-NODE-CLI Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.2afb09e1.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="cyan">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#comprehensive-development-guide-for-freshers" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="PI-NODE-CLI Documentation" class="md-header__button md-logo" aria-label="PI-NODE-CLI Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            PI-NODE-CLI Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Development Fresher Guide
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://bitbucket.org/supratimneogi007/pi-node-cli" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    pi-node-cli
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../installation/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Installation
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../code_of_conduct/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Code of Conduct
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../development/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Development
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../changelog/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Maintenance
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../contributing/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Contributing
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../sequelize_cc_typescript/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Typescript Template Development
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    <li class="md-tabs__item md-tabs__item--active">
+      <a href="./" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Development Fresher Guide
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="PI-NODE-CLI Documentation" class="md-nav__button md-logo" aria-label="PI-NODE-CLI Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    PI-NODE-CLI Documentation
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://bitbucket.org/supratimneogi007/pi-node-cli" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    pi-node-cli
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../installation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Installation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../code_of_conduct/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Code of Conduct
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../development/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Development
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../changelog/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Maintenance
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../contributing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Contributing
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sequelize_cc_typescript/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Typescript Template Development
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Development Fresher Guide
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Development Fresher Guide
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-dhiwise-node-cli" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is DhiWise Node CLI?
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="What is DhiWise Node CLI?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#supported-frameworks-and-architectures" class="md-nav__link">
+    <span class="md-ellipsis">
+      Supported Frameworks and Architectures
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#project-architecture-deep-dive" class="md-nav__link">
+    <span class="md-ellipsis">
+      Project Architecture Deep Dive
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#technical-setup-guide" class="md-nav__link">
+    <span class="md-ellipsis">
+      Technical Setup Guide
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Technical Setup Guide">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prerequisites
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#development-environment-setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      Development Environment Setup
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#code-flow-walkthrough" class="md-nav__link">
+    <span class="md-ellipsis">
+      Code Flow Walkthrough
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-files-deep-dive" class="md-nav__link">
+    <span class="md-ellipsis">
+      Key Files Deep Dive
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Key Files Deep Dive">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#binindexjs" class="md-nav__link">
+    <span class="md-ellipsis">
+      bin/index.js
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#questionsindexjs" class="md-nav__link">
+    <span class="md-ellipsis">
+      questions/index.js
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#repositoryapijs" class="md-nav__link">
+    <span class="md-ellipsis">
+      repository/api.js
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#repositorymodeljs" class="md-nav__link">
+    <span class="md-ellipsis">
+      repository/model.js
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#templatesboilerplate" class="md-nav__link">
+    <span class="md-ellipsis">
+      templates/*/boilerplate/
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#making-effective-contributions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Making Effective Contributions
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Making Effective Contributions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#step-1-find-an-issue-or-feature" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 1: Find an Issue or Feature
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-2-create-a-feature-branch" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 2: Create a Feature Branch
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-3-development-workflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 3: Development Workflow
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-4-testing-your-changes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 4: Testing Your Changes
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-5-prepare-your-pull-request" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 5: Prepare Your Pull Request
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#advanced-topics" class="md-nav__link">
+    <span class="md-ellipsis">
+      Advanced Topics
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Advanced Topics">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#custom-template-development" class="md-nav__link">
+    <span class="md-ellipsis">
+      Custom Template Development
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#abstract-syntax-tree-ast-manipulation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Abstract Syntax Tree (AST) Manipulation
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#troubleshooting-common-issues" class="md-nav__link">
+    <span class="md-ellipsis">
+      Troubleshooting Common Issues
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Troubleshooting Common Issues">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#command-not-found-after-npm-link" class="md-nav__link">
+    <span class="md-ellipsis">
+      "Command not found" after npm link
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#template-files-not-generating-correctly" class="md-nav__link">
+    <span class="md-ellipsis">
+      Template files not generating correctly
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#error-when-running-ast-transformations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Error when running AST transformations
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#learning-path-for-mastery" class="md-nav__link">
+    <span class="md-ellipsis">
+      Learning Path for Mastery
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#community-resources" class="md-nav__link">
+    <span class="md-ellipsis">
+      Community Resources
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-dhiwise-node-cli" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is DhiWise Node CLI?
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="What is DhiWise Node CLI?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#supported-frameworks-and-architectures" class="md-nav__link">
+    <span class="md-ellipsis">
+      Supported Frameworks and Architectures
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#project-architecture-deep-dive" class="md-nav__link">
+    <span class="md-ellipsis">
+      Project Architecture Deep Dive
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#technical-setup-guide" class="md-nav__link">
+    <span class="md-ellipsis">
+      Technical Setup Guide
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Technical Setup Guide">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prerequisites
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#development-environment-setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      Development Environment Setup
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#code-flow-walkthrough" class="md-nav__link">
+    <span class="md-ellipsis">
+      Code Flow Walkthrough
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-files-deep-dive" class="md-nav__link">
+    <span class="md-ellipsis">
+      Key Files Deep Dive
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Key Files Deep Dive">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#binindexjs" class="md-nav__link">
+    <span class="md-ellipsis">
+      bin/index.js
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#questionsindexjs" class="md-nav__link">
+    <span class="md-ellipsis">
+      questions/index.js
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#repositoryapijs" class="md-nav__link">
+    <span class="md-ellipsis">
+      repository/api.js
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#repositorymodeljs" class="md-nav__link">
+    <span class="md-ellipsis">
+      repository/model.js
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#templatesboilerplate" class="md-nav__link">
+    <span class="md-ellipsis">
+      templates/*/boilerplate/
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#making-effective-contributions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Making Effective Contributions
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Making Effective Contributions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#step-1-find-an-issue-or-feature" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 1: Find an Issue or Feature
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-2-create-a-feature-branch" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 2: Create a Feature Branch
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-3-development-workflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 3: Development Workflow
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-4-testing-your-changes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 4: Testing Your Changes
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-5-prepare-your-pull-request" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 5: Prepare Your Pull Request
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#advanced-topics" class="md-nav__link">
+    <span class="md-ellipsis">
+      Advanced Topics
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Advanced Topics">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#custom-template-development" class="md-nav__link">
+    <span class="md-ellipsis">
+      Custom Template Development
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#abstract-syntax-tree-ast-manipulation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Abstract Syntax Tree (AST) Manipulation
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#troubleshooting-common-issues" class="md-nav__link">
+    <span class="md-ellipsis">
+      Troubleshooting Common Issues
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Troubleshooting Common Issues">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#command-not-found-after-npm-link" class="md-nav__link">
+    <span class="md-ellipsis">
+      "Command not found" after npm link
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#template-files-not-generating-correctly" class="md-nav__link">
+    <span class="md-ellipsis">
+      Template files not generating correctly
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#error-when-running-ast-transformations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Error when running AST transformations
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#learning-path-for-mastery" class="md-nav__link">
+    <span class="md-ellipsis">
+      Learning Path for Mastery
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#community-resources" class="md-nav__link">
+    <span class="md-ellipsis">
+      Community Resources
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="comprehensive-development-guide-for-freshers">Comprehensive Development Guide for Freshers<a class="headerlink" href="#comprehensive-development-guide-for-freshers" title="Permanent link">&para;</a></h1>
+<p>Welcome to the DhiWise Node CLI project! This guide provides detailed instructions for newcomers to understand the project architecture, development workflow, and contribution process.</p>
+<h2 id="what-is-dhiwise-node-cli">What is DhiWise Node CLI?<a class="headerlink" href="#what-is-dhiwise-node-cli" title="Permanent link">&para;</a></h2>
+<p>DhiWise Node CLI is a powerful code generation tool that bootstraps production-ready Node.js applications following industry best practices. It dramatically reduces boilerplate coding and helps maintain consistent architecture across projects.</p>
+<h3 id="supported-frameworks-and-architectures">Supported Frameworks and Architectures<a class="headerlink" href="#supported-frameworks-and-architectures" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Database ORM</th>
+<th>Architecture Patterns</th>
+<th>Features</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Mongoose (MongoDB)</td>
+<td>Clean Code Architecture</td>
+<td>• REST API scaffolding<br>• Model generation<br>• Authentication setup<br>• CRUD operations</td>
+</tr>
+<tr>
+<td>Mongoose (MongoDB)</td>
+<td>MVC Architecture</td>
+<td>• Controller-based routing<br>• View integration<br>• Express middleware setup</td>
+</tr>
+<tr>
+<td>Sequelize (SQL)</td>
+<td>Clean Code Architecture</td>
+<td>• Database migrations<br>• Complex relationships<br>• Transaction support<br>• Typescript support</td>
+</tr>
+<tr>
+<td>Sequelize (SQL)</td>
+<td>MVC Architecture</td>
+<td>• Structured module organization<br>• Separation of concerns<br>• Extensible codebase</td>
+</tr>
+</tbody>
+</table>
+<h2 id="project-architecture-deep-dive">Project Architecture Deep Dive<a class="headerlink" href="#project-architecture-deep-dive" title="Permanent link">&para;</a></h2>
+<div class="codehilite"><pre><span></span><code><span class="n">dhiwise</span><span class="o">-</span><span class="n">node</span><span class="o">-</span><span class="n">cli</span><span class="o">/</span>
+<span class="err">├──</span><span class="w"> </span><span class="n">bin</span><span class="o">/</span><span class="w">                  </span><span class="c1"># Command executables - entry points for CLI commands</span>
+<span class="err">│</span><span class="w">   </span><span class="err">├──</span><span class="w"> </span><span class="n">create</span><span class="o">-</span><span class="n">api</span><span class="o">.</span><span class="n">js</span><span class="w">     </span><span class="c1"># API generator command</span>
+<span class="err">│</span><span class="w">   </span><span class="err">├──</span><span class="w"> </span><span class="n">create</span><span class="o">-</span><span class="n">app</span><span class="o">.</span><span class="n">js</span><span class="w">     </span><span class="c1"># Application scaffold generator</span>
+<span class="err">│</span><span class="w">   </span><span class="err">├──</span><span class="w"> </span><span class="n">create</span><span class="o">-</span><span class="n">model</span><span class="o">.</span><span class="n">js</span><span class="w">   </span><span class="c1"># Database model generator</span>
+<span class="err">│</span><span class="w">   </span><span class="err">└──</span><span class="w"> </span><span class="n">create</span><span class="o">-</span><span class="n">module</span><span class="o">.</span><span class="n">js</span><span class="w">  </span><span class="c1"># Module generator for existing applications</span>
+<span class="err">│</span>
+<span class="err">├──</span><span class="w"> </span><span class="n">constant</span><span class="o">/</span><span class="w">             </span><span class="c1"># Application constants and configuration</span>
+<span class="err">│</span><span class="w">   </span><span class="err">├──</span><span class="w"> </span><span class="n">astConstant</span><span class="o">.</span><span class="n">js</span><span class="w">    </span><span class="c1"># Abstract Syntax Tree constants for code generation</span>
+<span class="err">│</span><span class="w">   </span><span class="err">└──</span><span class="w"> </span><span class="n">index</span><span class="o">.</span><span class="n">js</span><span class="w">          </span><span class="c1"># Exported constants</span>
+<span class="err">│</span>
+<span class="err">├──</span><span class="w"> </span><span class="n">questions</span><span class="o">/</span><span class="w">            </span><span class="c1"># Interactive prompts for CLI users</span>
+<span class="err">│</span><span class="w">   </span><span class="err">└──</span><span class="w"> </span><span class="n">index</span><span class="o">.</span><span class="n">js</span><span class="w">          </span><span class="c1"># Question definitions using Inquirer.js</span>
+<span class="err">│</span>
+<span class="err">├──</span><span class="w"> </span><span class="n">repository</span><span class="o">/</span><span class="w">           </span><span class="c1"># Core business logic for code generation</span>
+<span class="err">│</span><span class="w">   </span><span class="err">├──</span><span class="w"> </span><span class="n">api</span><span class="o">.</span><span class="n">js</span><span class="w">            </span><span class="c1"># API endpoint generation logic</span>
+<span class="err">│</span><span class="w">   </span><span class="err">├──</span><span class="w"> </span><span class="n">boilerplate</span><span class="o">.</span><span class="n">js</span><span class="w">    </span><span class="c1"># Project structure generation</span>
+<span class="err">│</span><span class="w">   </span><span class="err">├──</span><span class="w"> </span><span class="n">model</span><span class="o">.</span><span class="n">js</span><span class="w">          </span><span class="c1"># Data model generation</span>
+<span class="err">│</span><span class="w">   </span><span class="err">├──</span><span class="w"> </span><span class="n">module</span><span class="o">.</span><span class="n">js</span><span class="w">         </span><span class="c1"># Feature module generation</span>
+<span class="err">│</span><span class="w">   </span><span class="err">└──</span><span class="w"> </span><span class="n">render</span><span class="o">.</span><span class="n">js</span><span class="w">         </span><span class="c1"># Template rendering utilities</span>
+<span class="err">│</span>
+<span class="err">├──</span><span class="w"> </span><span class="n">setting</span><span class="o">/</span><span class="w">              </span><span class="c1"># Configuration settings for different templates</span>
+<span class="err">│</span><span class="w">   </span><span class="err">└──</span><span class="w"> </span><span class="n">index</span><span class="o">.</span><span class="n">js</span><span class="w">          </span><span class="c1"># Settings loader</span>
+<span class="err">│</span>
+<span class="err">├──</span><span class="w"> </span><span class="n">templates</span><span class="o">/</span><span class="w">            </span><span class="c1"># Template files for different architectures</span>
+<span class="err">│</span><span class="w">   </span><span class="err">├──</span><span class="w"> </span><span class="n">mongoose_cc</span><span class="o">/</span><span class="w">      </span><span class="c1"># Mongoose Clean Code templates</span>
+<span class="err">│</span><span class="w">   </span><span class="err">├──</span><span class="w"> </span><span class="n">mongoose_mvc</span><span class="o">/</span><span class="w">     </span><span class="c1"># Mongoose MVC templates</span>
+<span class="err">│</span><span class="w">   </span><span class="err">├──</span><span class="w"> </span><span class="n">sequelize_cc</span><span class="o">/</span><span class="w">     </span><span class="c1"># Sequelize Clean Code templates</span>
+<span class="err">│</span><span class="w">   </span><span class="err">└──</span><span class="w"> </span><span class="n">sequelize_mvc</span><span class="o">/</span><span class="w">    </span><span class="c1"># Sequelize MVC templates</span>
+<span class="err">│</span>
+<span class="err">├──</span><span class="w"> </span><span class="n">utils</span><span class="o">/</span><span class="w">                </span><span class="c1"># Utility functions</span>
+<span class="err">│</span><span class="w">   </span><span class="err">├──</span><span class="w"> </span><span class="n">deploy_docs</span><span class="o">.</span><span class="n">sh</span><span class="w">    </span><span class="c1"># Documentation deployment script</span>
+<span class="err">│</span><span class="w">   </span><span class="err">└──</span><span class="w"> </span><span class="n">index</span><span class="o">.</span><span class="n">js</span><span class="w">          </span><span class="c1"># General utilities</span>
+<span class="err">│</span>
+<span class="err">└──</span><span class="w"> </span><span class="n">writeOperations</span><span class="o">/</span><span class="w">      </span><span class="c1"># File system operations for code generation</span>
+<span class="w">    </span><span class="err">└──</span><span class="w"> </span><span class="n">index</span><span class="o">.</span><span class="n">js</span><span class="w">          </span><span class="c1"># File writing utilities</span>
+</code></pre></div>
+
+<h2 id="technical-setup-guide">Technical Setup Guide<a class="headerlink" href="#technical-setup-guide" title="Permanent link">&para;</a></h2>
+<h3 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Node.js</strong>: v14.x or higher (v16.x recommended)</li>
+<li><strong>npm</strong>: v7.x or higher OR <strong>yarn</strong>: v1.22.x or higher</li>
+<li><strong>Git</strong>: Latest version for version control</li>
+<li><strong>Code Editor</strong>: VSCode recommended with ESLint and Prettier extensions</li>
+<li><strong>Terminal</strong>: Bash, Zsh, or PowerShell</li>
+</ul>
+<h3 id="development-environment-setup">Development Environment Setup<a class="headerlink" href="#development-environment-setup" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>Fork the Repository</strong>:</li>
+<li>
+<p>Visit the GitHub repository and click "Fork" to create your own copy</p>
+</li>
+<li>
+<p><strong>Clone your fork</strong>:
+   <code>bash
+   git clone https://github.com/supratimneogi/nodejs-cli.git
+   cd nodejs-cli</code></p>
+</li>
+<li>
+<p><strong>Install Dependencies</strong>:
+   <code>bash
+   npm install
+   # OR with yarn
+   yarn install</code></p>
+</li>
+<li>
+<p><strong>Set up Git Hooks</strong> (if available):
+   <code>bash
+   npm run prepare
+   # This sets up husky for pre-commit hooks</code></p>
+</li>
+<li>
+<p><strong>Link the CLI locally</strong>:
+   <code>bash
+   npm link
+   # Now you can use commands like 'create-app' directly</code></p>
+</li>
+<li>
+<p><strong>Verify Installation</strong>:
+   <code>bash
+   create-app --version
+   # Should display the current version number</code></p>
+</li>
+</ol>
+<h2 id="code-flow-walkthrough">Code Flow Walkthrough<a class="headerlink" href="#code-flow-walkthrough" title="Permanent link">&para;</a></h2>
+<p>Understanding how code flows through the CLI is critical:</p>
+<ol>
+<li><strong>Command Execution</strong>:</li>
+<li>User runs a command like <code>create-app my-project</code></li>
+<li><code>bin/create-app.js</code> serves as the entry point</li>
+<li>
+<p>The command parses arguments using <code>commander.js</code></p>
+</li>
+<li>
+<p><strong>User Input Collection</strong>:</p>
+</li>
+<li><code>questions/index.js</code> contains Inquirer.js prompts</li>
+<li>CLI asks for project name, architecture, database, etc.</li>
+<li>
+<p>Responses are collected in a configuration object</p>
+</li>
+<li>
+<p><strong>Template Selection</strong>:</p>
+</li>
+<li>Based on user choices, templates are selected from <code>templates/</code></li>
+<li>
+<p><code>repository/boilerplate.js</code> determines which files to include</p>
+</li>
+<li>
+<p><strong>Code Generation Process</strong>:</p>
+</li>
+<li><strong>Copy Phase</strong>: Boilerplate files are copied from templates</li>
+<li><strong>Modification Phase</strong>: Files are modified based on user inputs</li>
+<li><strong>AST Transformation</strong>: Code structure is manipulated using Abstract Syntax Trees</li>
+<li>
+<p><strong>Writing Phase</strong>: Final code is written to the target directory</p>
+</li>
+<li>
+<p><strong>Post-Processing</strong>:</p>
+</li>
+<li>Package dependencies are installed</li>
+<li>Git repository is initialized (if requested)</li>
+<li>Success message with next steps is displayed</li>
+</ol>
+<h2 id="key-files-deep-dive">Key Files Deep Dive<a class="headerlink" href="#key-files-deep-dive" title="Permanent link">&para;</a></h2>
+<h3 id="binindexjs"><code>bin/index.js</code><a class="headerlink" href="#binindexjs" title="Permanent link">&para;</a></h3>
+<p>Entry point for all CLI commands. Registers subcommands and parses arguments.</p>
+<h3 id="questionsindexjs"><code>questions/index.js</code><a class="headerlink" href="#questionsindexjs" title="Permanent link">&para;</a></h3>
+<p>Defines interactive prompts using Inquirer.js with validation logic and conditional questions.</p>
+<h3 id="repositoryapijs"><code>repository/api.js</code><a class="headerlink" href="#repositoryapijs" title="Permanent link">&para;</a></h3>
+<p>Generates API endpoints with routes, controllers, and validation based on models.</p>
+<h3 id="repositorymodeljs"><code>repository/model.js</code><a class="headerlink" href="#repositorymodeljs" title="Permanent link">&para;</a></h3>
+<p>Creates database models with proper schema definitions, validations, and relationships.</p>
+<h3 id="templatesboilerplate"><code>templates/*/boilerplate/</code><a class="headerlink" href="#templatesboilerplate" title="Permanent link">&para;</a></h3>
+<p>Contains foundational project structure including config files, server setup, middleware configuration.</p>
+<h2 id="making-effective-contributions">Making Effective Contributions<a class="headerlink" href="#making-effective-contributions" title="Permanent link">&para;</a></h2>
+<h3 id="step-1-find-an-issue-or-feature">Step 1: Find an Issue or Feature<a class="headerlink" href="#step-1-find-an-issue-or-feature" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Check GitHub issues for "good first issue" labels</li>
+<li>Identify bugs you can fix or features you'd like to add</li>
+<li>Discuss your approach in the issue before starting work</li>
+</ul>
+<h3 id="step-2-create-a-feature-branch">Step 2: Create a Feature Branch<a class="headerlink" href="#step-2-create-a-feature-branch" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><code>git<span class="w"> </span>checkout<span class="w"> </span>-b<span class="w"> </span>feature/your-feature-name
+<span class="c1"># OR</span>
+git<span class="w"> </span>checkout<span class="w"> </span>-b<span class="w"> </span>fix/issue-you-are-fixing
+</code></pre></div>
+
+<h3 id="step-3-development-workflow">Step 3: Development Workflow<a class="headerlink" href="#step-3-development-workflow" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Make your changes following the project's coding style</li>
+<li>Test thoroughly with different inputs and scenarios</li>
+<li>Add comments explaining complex logic</li>
+<li>Update relevant documentation</li>
+</ol>
+<h3 id="step-4-testing-your-changes">Step 4: Testing Your Changes<a class="headerlink" href="#step-4-testing-your-changes" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="c1"># Link your development version</span>
+npm<span class="w"> </span>link
+
+<span class="c1"># Test creating a new application</span>
+create-app<span class="w"> </span>test-app<span class="w"> </span>--framework<span class="w"> </span>mongoose<span class="w"> </span>--architecture<span class="w"> </span>cc
+
+<span class="c1"># Test creating a model</span>
+<span class="nb">cd</span><span class="w"> </span>test-app
+create-model<span class="w"> </span>User<span class="w"> </span>--fields<span class="w"> </span><span class="s2">&quot;name:String,email:String,age:Number&quot;</span>
+
+<span class="c1"># Test creating an API</span>
+create-api<span class="w"> </span>User<span class="w"> </span>--operations<span class="w"> </span><span class="s2">&quot;create,find,update,delete&quot;</span>
+</code></pre></div>
+
+<h3 id="step-5-prepare-your-pull-request">Step 5: Prepare Your Pull Request<a class="headerlink" href="#step-5-prepare-your-pull-request" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Ensure code passes all tests</li>
+<li>Update documentation if needed</li>
+<li>Write a clear commit message</li>
+<li>Push your branch to your fork</li>
+<li>Create a Pull Request with a detailed description</li>
+</ol>
+<h2 id="advanced-topics">Advanced Topics<a class="headerlink" href="#advanced-topics" title="Permanent link">&para;</a></h2>
+<h3 id="custom-template-development">Custom Template Development<a class="headerlink" href="#custom-template-development" title="Permanent link">&para;</a></h3>
+<p>To create custom templates:
+1. Study existing templates in <code>templates/</code> directory
+2. Create a new directory structure following naming patterns
+3. Update <code>repository/boilerplate.js</code> to include your template
+4. Add relevant questions in <code>questions/index.js</code></p>
+<h3 id="abstract-syntax-tree-ast-manipulation">Abstract Syntax Tree (AST) Manipulation<a class="headerlink" href="#abstract-syntax-tree-ast-manipulation" title="Permanent link">&para;</a></h3>
+<p>DhiWise CLI uses AST to generate and modify code:
+1. Code parsing using tools like <code>@babel/parser</code>
+2. AST traversal and modification with <code>@babel/traverse</code>
+3. Code generation from modified AST with <code>@babel/generator</code></p>
+<p>Example AST modification:</p>
+<div class="codehilite"><pre><span></span><code><span class="c1">// simplified example of adding a route to express router</span>
+<span class="kd">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">parse</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">require</span><span class="p">(</span><span class="s1">&#39;@babel/parser&#39;</span><span class="p">);</span>
+<span class="kd">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">default</span><span class="o">:</span><span class="w"> </span><span class="nx">traverse</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">require</span><span class="p">(</span><span class="s1">&#39;@babel/traverse&#39;</span><span class="p">);</span>
+<span class="kd">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">default</span><span class="o">:</span><span class="w"> </span><span class="nx">generate</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">require</span><span class="p">(</span><span class="s1">&#39;@babel/generator&#39;</span><span class="p">);</span>
+
+<span class="kd">const</span><span class="w"> </span><span class="nx">sourceCode</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="sb">`</span>
+<span class="sb">const router = express.Router();</span>
+<span class="sb">module.exports = router;</span>
+<span class="sb">`</span><span class="p">;</span>
+
+<span class="kd">const</span><span class="w"> </span><span class="nx">ast</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">parse</span><span class="p">(</span><span class="nx">sourceCode</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">sourceType</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;module&#39;</span><span class="w"> </span><span class="p">});</span>
+
+<span class="nx">traverse</span><span class="p">(</span><span class="nx">ast</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">AssignmentExpression</span><span class="p">(</span><span class="nx">path</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">path</span><span class="p">.</span><span class="nx">node</span><span class="p">.</span><span class="nx">left</span><span class="p">.</span><span class="nx">name</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="s1">&#39;module&#39;</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>
+<span class="w">        </span><span class="nx">path</span><span class="p">.</span><span class="nx">node</span><span class="p">.</span><span class="nx">left</span><span class="p">.</span><span class="nx">property</span><span class="p">.</span><span class="nx">name</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="s1">&#39;exports&#39;</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="c1">// Add new route before export</span>
+<span class="w">      </span><span class="nx">path</span><span class="p">.</span><span class="nx">insertBefore</span><span class="p">(</span><span class="nx">parse</span><span class="p">(</span><span class="sb">`</span>
+<span class="sb">        router.get(&#39;/newRoute&#39;, controller.newMethod);</span>
+<span class="sb">      `</span><span class="p">).</span><span class="nx">program</span><span class="p">.</span><span class="nx">body</span><span class="p">[</span><span class="mf">0</span><span class="p">]);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">});</span>
+
+<span class="kd">const</span><span class="w"> </span><span class="nx">output</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">generate</span><span class="p">(</span><span class="nx">ast</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">output</span><span class="p">.</span><span class="nx">code</span><span class="p">);</span>
+</code></pre></div>
+
+<h2 id="troubleshooting-common-issues">Troubleshooting Common Issues<a class="headerlink" href="#troubleshooting-common-issues" title="Permanent link">&para;</a></h2>
+<h3 id="command-not-found-after-npm-link">"Command not found" after npm link<a class="headerlink" href="#command-not-found-after-npm-link" title="Permanent link">&para;</a></h3>
+<p><strong>Solution</strong>: Make sure global npm bin directory is in your PATH.</p>
+<div class="codehilite"><pre><span></span><code><span class="nb">export</span><span class="w"> </span><span class="nv">PATH</span><span class="o">=</span><span class="s2">&quot;</span><span class="nv">$PATH</span><span class="s2">:</span><span class="k">$(</span>npm<span class="w"> </span>config<span class="w"> </span>get<span class="w"> </span>prefix<span class="k">)</span><span class="s2">/bin&quot;</span>
+</code></pre></div>
+
+<h3 id="template-files-not-generating-correctly">Template files not generating correctly<a class="headerlink" href="#template-files-not-generating-correctly" title="Permanent link">&para;</a></h3>
+<p><strong>Solution</strong>: Check permissions and path structure:</p>
+<div class="codehilite"><pre><span></span><code><span class="c1"># Set proper permissions</span>
+chmod<span class="w"> </span>-R<span class="w"> </span><span class="m">755</span><span class="w"> </span>./templates
+
+<span class="c1"># Check file paths are correct for your OS</span>
+<span class="c1"># Windows paths may need adjustment</span>
+</code></pre></div>
+
+<h3 id="error-when-running-ast-transformations">Error when running AST transformations<a class="headerlink" href="#error-when-running-ast-transformations" title="Permanent link">&para;</a></h3>
+<p><strong>Solution</strong>: Verify babel dependencies are installed:</p>
+<div class="codehilite"><pre><span></span><code>npm<span class="w"> </span>install<span class="w"> </span>--save-dev<span class="w"> </span>@babel/parser<span class="w"> </span>@babel/traverse<span class="w"> </span>@babel/generator
+</code></pre></div>
+
+<h2 id="learning-path-for-mastery">Learning Path for Mastery<a class="headerlink" href="#learning-path-for-mastery" title="Permanent link">&para;</a></h2>
+<ol>
+<li><strong>Week 1-2</strong>: Study project structure and run basic commands</li>
+<li><strong>Week 3-4</strong>: Make simple documentation improvements and bug fixes</li>
+<li><strong>Week 5-6</strong>: Modify existing templates and add new features</li>
+<li><strong>Week 7-8</strong>: Create custom templates and contribute major features</li>
+</ol>
+<h2 id="community-resources">Community Resources<a class="headerlink" href="#community-resources" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Discord Channel</strong>: Join our developer community</li>
+<li><strong>Weekly Hours</strong>: 2 hrs atleast</li>
+<li><strong>Development Blog</strong>: Updates and tutorials</li>
+<li><strong>Contribution Leaderboard</strong>: Recognition for active contributors</li>
+</ul>
+<p>Remember, everyone starts somewhere! Don't hesitate to ask questions, and your contributions—no matter how small—are valued and appreciated.</p>
+<p>Happy coding! 🚀</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+    <a href="https://bitbucket.org/supratimneogi007" target="_blank" rel="noopener" title="Bitbucket Profile" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M22.2 32A16 16 0 0 0 6 47.8a26 26 0 0 0 .2 2.8l67.9 412.1a21.77 21.77 0 0 0 21.3 18.2h325.7a16 16 0 0 0 16-13.4L505 50.7a16 16 0 0 0-13.2-18.3 25 25 0 0 0-2.8-.2zm285.9 297.8h-104l-28.1-147h157.3z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs", "navigation.top", "search.suggest", "search.highlight"], "search": "../assets/javascripts/workers/search.f8cc74c7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.c8b220af.min.js"></script>
+      
+    
+  </body>
+</html>
